@@ -81,7 +81,7 @@ COPY ./tbot/tbot_run.sh /home/tbot/tbot_run.sh
 RUN chmod a+x /home/tbot/tbot_run.sh
 
 # TBOT: Set default git repository and allow user to override
-ARG TBOT_TRADINGBOAT_GIT_REPO=https://github.com/PlusGenie/tbot-tradingboat.git
+ARG TBOT_TRADINGBOAT_GIT_REPO=https://github.com/Oandr/tbot-tradingboat.git
 
 # Add GitHub to known hosts for SSH, copy SSH keys, and clone repository conditionally
 COPY ./tbot/* /home/tbot/.ssh/
@@ -114,7 +114,7 @@ RUN pip install -r requirements.txt
 RUN pip install -e .
 RUN chmod a+x /home/tbot/develop/github/tbot-tradingboat/tbottmux/*.sh
 
-RUN git clone https://github.com/PlusGenie/tradingview-webhooks-bot.git /home/tbot/develop/github/tradingview-webhooks-bot
+RUN git clone https://github.com/Oandr/tradingview-webhooks-bot.git /home/tbot/develop/github/tradingview-webhooks-bot
 WORKDIR /home/tbot/develop/github/tradingview-webhooks-bot/src
 # Install dependencies in the virtual environment
 RUN pip install -r requirements.txt
