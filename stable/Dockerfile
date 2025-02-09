@@ -8,8 +8,8 @@
 
 FROM ubuntu:22.04 as setup
 
-ENV IB_GATEWAY_VERSION=10.23.2a
-ENV IB_GATEWAY_RELEASE_CHANNEL=latest
+ENV IB_GATEWAY_VERSION=10.30.1t
+ENV IB_GATEWAY_RELEASE_CHANNEL=stable
 ENV IBC_VERSION=3.17.0
 
 # Prepare system
@@ -30,6 +30,8 @@ COPY ./scripts /root/scripts
 #
 
 FROM ubuntu:22.04
+
+ENV IB_GATEWAY_VERSION=10.30.1t
 
 WORKDIR /root
 
